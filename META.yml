@@ -1,0 +1,18 @@
+--- #YAML:1.0
+name: String-FlexMatch
+version: 0.05
+license: perl
+distribution_type: module
+requires:
+  Class::MethodMaker: 1.11
+  Test::More: 0.47
+  YAML: 0.35
+  perl: 5.6.1
+recommends: {}
+build_requires: {}
+conflicts: {}
+provides:
+  String::FlexMatch:
+    file: lib/String/FlexMatch.pm
+    version: 0.05
+generated_by: Module::Build version 0.20
