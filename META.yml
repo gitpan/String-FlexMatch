@@ -1,18 +1,22 @@
---- #YAML:1.0
-name: String-FlexMatch
-version: 0.05
-license: perl
+--- 
+abstract: flexible ways to match a string
+author: Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+build_requires: 
+  Test::Compile: 0
+  Test::More: 0
+  UNIVERSAL::require: 0
+  YAML: 0
 distribution_type: module
-requires:
-  Class::MethodMaker: 1.11
-  Test::More: 0.47
-  YAML: 0.35
-  perl: 5.6.1
-recommends: {}
-build_requires: {}
-conflicts: {}
-provides:
-  String::FlexMatch:
-    file: lib/String/FlexMatch.pm
-    version: 0.05
-generated_by: Module::Build version 0.20
+generated_by: Module::Install version 0.67
+license: perl
+meta-spec: 
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
+name: String-FlexMatch
+no_index: 
+  directory: 
+    - inc
+    - t
+requires: 
+  Class::MethodMaker: 0
+version: 0.07

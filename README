@@ -1,147 +1,27 @@
-NAME
-    String::FlexMatch - flexible ways to match a string
-
-SYNOPSIS
-      use String::FlexMatch;
-
-      my $s = String::FlexMatch->new(string => 'foobar');
-      if ($s eq 'foobar') {
-        ...
-      }
-
-      my $s = String::FlexMatch->new(regex => 'Error .* at line \d+');
-      if ($s eq 'Error "foo" at line 58') {
-        ...
-      }
-
-      my $s = String::FlexMatch->new(code => 'sub { length $_[0] < 10 }');
-      # or:
-      # my $s = String::FlexMatch->new(code => sub { length $_[0] < 10 });
-
-      if ($s ne 'somelongstring') {
-        ...
-      }
-
-DESCRIPTION
-    Normally when trying to see whether two strings are equal, you use the
-    "eq" operator. If you want to find out whether one string matches
-    another more flexibly, you'd use a regular expression. And sometimes you
-    have to call a subroutine with a string argument that will tell you
-    whether that argument is interesting, i.e. matches in a broader sense.
-
-    When running data-driven tests, you sometimes don't know per se which
-    form of matching ("eq", regex or code) you need. Take the following
-    example:
-
-      use Test::More;
-      use String::FlexMatch;
-      use YAML;
-  
-      sub frobnicate { $_[0] + $_[1] }
-  
-      my $tests = Load do { local $/; <DATA> };
-      plan tests => scalar @$tests;
-  
-      for my $test (@$tests) {
-        my $baz = frobnicate($test->{testarg}{foo}, $test->{testarg}{bar});
-        is($baz, $test->{expect}{baz});
-      }
-  
-      __DATA__
-      -
-        testarg:
-          foo: 2
-          bar: 3
-        expect:
-          baz: 5
-      -
-        testarg:
-          foo: 21
-          bar: 34
-        expect:
-          baz: !perl/String::FlexMatch
-            regex: '\d+'
-
-    A setup like this was the reason for writing this class. If you find any
-    other uses for it, please let me know so this manpage can be expanded
-    with a few cookbook-style examples.
-
-PROPERTIES
-    "string([STRING])"
-        Gets or sets the object's string value.
-
-    "regex([REGEX|STRING])"
-        Gets or sets the object's regex value. If a string is given, it is
-        converted to a regex via "qr()". Since creating the object by
-        reading a YAML file won't go through this accessor, it's still
-        possible that this property holds a string value, which is why it is
-        converted to a regex, if necessary, when reading the property as
-        well.
-
-    "code([CODE|STRING])"
-        Gets or sets the object's coderef value, which should be an
-        anonymous subroutine. If a string is given, it is converted to a
-        code via "eval()". Since creating the object by reading a YAML file
-        won't go through this accessor, it's still possible that this
-        property holds a string value, which is why it is converted to a
-        coderef, if necessary, when reading the property as well.
-
-OVERLOADS
-    ""  Stringification returns (in order of preference) the string property
-        of the object (if it is defined), or the stringified regex (if it is
-        defined) or the stringified coderef (if it is defined). Otherwise it
-        returns "undef".
-
-    "eq"
-        Comparing a string to this object via the "eq" operator returns a
-        true value if one of the following conditions holds (checked in the
-        order given here):
-
-        *   If the object has a defined string property then it must be
-            equal (using "eq") to the string.
-
-        *   If the object has a defined regex property, then the string must
-            match the regex.
-
-        *   If the object has a defined code property, then the anonymous
-            sub is called with the string as an argument and whatever that
-            returns is also returned as the result of the "eq" operation.
-
-        Note that at least one of the two things compared must be a string.
-        It is not possible to compare two String::FlexMatch objects if
-        neither of them has a defined string property. After all, how should
-        a regex be compared to coderef, or two regexes, or two coderefs?
-
-    "ne"
-        Comparing a string to this object via the "ne" operator returns the
-        inverse of the comparison via the "eq" operator.
-
-BUGS
-    *   Because of a change in Test::More's "_deep_check()" in the version
-        used by perl 5.8.1-RC4, this class doesn't work with that
-        Test::More's "is_deeply()", "eq_hash()" and "eq_array()".
-
-    If you find any other bugs or oddities, please do inform the author.
+This is the Perl module String::FlexMatch.
 
 INSTALLATION
-    See perlmodinstall for information and options on installing Perl
-    modules.
 
-AVAILABILITY
-    The latest version of this module is available from the Comprehensive
-    Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
-    CPAN site near you. Or see
-    <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+String::FlexMatch installation is straightforward. If your CPAN shell is set
+up, you should just be able to do
 
-VERSION
-    This document describes version 0.05 of "String::FlexMatch".
+    % cpan String::FlexMatch
 
-AUTHOR
-    Marcel Grünauer <marcel@cpan.org>
+Download it, unpack it, then build it as per the usual:
 
-COPYRIGHT
-    Copyright 2003 Marcel Grünauer. All rights reserved.
+    % perl Makefile.PL
+    % make && make test
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+Then install it:
 
+    % make install
+
+DOCUMENTATION
+
+String::FlexMatch documentation is available as in POD. So you can do:
+
+    % perldoc String::FlexMatch
+
+to read the documentation online with your favorite pager.
+
+Marcel Gruenauer

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # eq_hash still works with String::FlexMatch, because deep down it still
 # uses the 'eq' operator.
@@ -8,6 +8,7 @@ use strict;
 
 use YAML;
 use Test::More tests => 4;
+use String::FlexMatch::Test;
 
 BEGIN { use_ok('String::FlexMatch') }
 
@@ -21,10 +22,10 @@ my $hash1 = {
     attr4 => 'No such class',
   },
 };
-ok(eq_hash($data, $hash1), 'Matching hash');
+ok(eq_hash_flex($data, $hash1), 'Matching hash');
 
 $hash1->{attr5} = 'This should not be here';
-ok(!eq_hash($data, $hash1), 'Hash with extra key');
+ok(!eq_hash_flex($data, $hash1), 'Hash with extra key');
 
 $hash1 = {
   errors => {
@@ -34,7 +35,7 @@ $hash1 = {
     attr4 => 'No such class',
   },
 };
-ok(!eq_hash($data, $hash1), 'Hash with word instead of number');
+ok(!eq_hash_flex($data, $hash1), 'Hash with word instead of number');
 
 __DATA__
 errors:

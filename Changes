@@ -1,22 +1,28 @@
 Revision history for Perl extension String::FlexMatch.
 
+0.07  Do Okt  4 17:31:55 CEST 2007
+    - brought it into shape for CPAN release
+
+0.06  Wed Feb 16 12:45:19 MEZ 2005
+    - added support for YAML::Active's Dump()
+
 0.05  Thu Sep  4 12:47:18 CEST 2003
-	- now uses Module::Build and generates META.yml and Makefile.PL
+    - now uses Module::Build and generates META.yml and Makefile.PL
         - added documentation for accessors and overloaded operators
 
 0.04  Thu Sep  4 00:20:30 CEST 2003
         after discussing the module on the code-review-ladder mailing list:
-	- added YAML and Test::More to Makefile.PL's PREREQ_PM (thanks
-	  Andrew Savige)
+    - added YAML and Test::More to Makefile.PL's PREREQ_PM (thanks
+      Andrew Savige)
         - simplified is_eq() somewhat (thanks Steffen Mueller)
 
 0.03  Tue Sep  2 13:01:15 CEST 2003
-	- now uses Class::MethodMaker for constructor generation
+    - now uses Class::MethodMaker for constructor generation
 
 0.02  Tue Sep  2 10:45:23 CEST 2003
-	- first working implementation
+    - first working implementation
 
 0.01  Mon Sep  1 23:52:02 2003
-	- original version; created by h2xs 1.22 with options
-		-XAn String::FlexMatch
+    - original version; created by h2xs 1.22 with options
+        -XAn String::FlexMatch
 
