@@ -1,5 +1,8 @@
 Revision history for Perl extension String::FlexMatch.
 
+0.08  Mi Okt 17 13:07:50 CEST 2007
+    - switched from Class::MethodMaker to Class::Accessor::Complex
+
 0.07  Do Okt  4 17:31:55 CEST 2007
     - brought it into shape for CPAN release
 

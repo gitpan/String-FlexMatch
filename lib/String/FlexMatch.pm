@@ -3,12 +3,15 @@ package String::FlexMatch;
 use strict;
 use warnings;
 
-use Class::MethodMaker
-    [ new   => [ qw/-hash new/ ],
-    ];
+
+use base 'Class::Accessor::Complex';
 
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
+
+
+String::FlexMatch->mk_new;
+
 
 # Back in Test::More 0.45 the sane view was taken that if an object overrides
 # stringification, it probably does so for a reason, and that stringification
