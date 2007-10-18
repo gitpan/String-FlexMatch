@@ -7,7 +7,7 @@ use warnings;
 use base 'Class::Accessor::Complex';
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 String::FlexMatch->mk_new;
