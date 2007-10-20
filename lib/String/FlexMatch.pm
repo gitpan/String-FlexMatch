@@ -7,10 +7,10 @@ use warnings;
 use base 'Class::Accessor::Complex';
 
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 
-String::FlexMatch->mk_new;
+__PACKAGE__->mk_new;
 
 
 # Back in Test::More 0.45 the sane view was taken that if an object overrides

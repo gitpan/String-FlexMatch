@@ -1,5 +1,8 @@
 Revision history for Perl extension String::FlexMatch.
 
+0.10  Sa Okt 20 22:35:03 CEST 2007
+        - simplified accessor declaration
+
 0.09  Do Okt 18 10:09:39 CEST 2007
         - fixed version requirement of Test::More
 

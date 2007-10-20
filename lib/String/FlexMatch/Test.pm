@@ -6,7 +6,7 @@ use warnings;
 use strict;
 use Test::Builder;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 # Code that uses this testing package will likely need String::FlexMatch as
 # well, therefore we load it here so the other code won't have to.

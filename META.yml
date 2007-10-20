@@ -20,4 +20,4 @@ no_index:
 requires: 
   Class::Accessor::Complex: 0
   perl: 5.6.0
-version: 0.09
+version: 0.10
