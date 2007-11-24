@@ -6,16 +6,20 @@ use warnings;
 use strict;
 use Test::Builder;
 
-our $VERSION = '0.10';
-
 # Code that uses this testing package will likely need String::FlexMatch as
 # well, therefore we load it here so the other code won't have to.
 
 use String::FlexMatch;
 
+
+our $VERSION = '0.11';
+
+
 use base 'Exporter';
 
+
 our @EXPORT = qw(is_deeply_flex isnt_deeply_flex eq_array_flex eq_hash_flex);
+
 
 my $Test = Test::Builder->new;
 
@@ -30,6 +34,7 @@ my $Test = Test::Builder->new;
 
 use vars qw(@Data_Stack);
 my $DNE = bless [], 'Does::Not::Exist';
+
 
 sub is_deeply_flex {
     my ($got, $expect, $name) = @_;
@@ -225,4 +230,64 @@ sub eq_hash_flex {
     return $ok;
 }
 
+
 1;
+
+
+__END__
+
+
+
+=head1 NAME
+
+String::FlexMatch::Test - test methods that can handle flexible strings
+
+=head1 SYNOPSIS
+
+    String::FlexMatch::Test->new;
+
+=head1 DESCRIPTION
+
+None yet.
+
+=head1 TAGS
+
+If you talk about this module in blogs, on del.icio.us or anywhere else,
+please use the C<stringflexmatch> tag.
+
+=head1 VERSION 
+                   
+This document describes version 0.11 of L<String::FlexMatch::Test>.
+
+=head1 BUGS AND LIMITATIONS
+
+No bugs have been reported.
+
+Please report any bugs or feature requests to
+C<<bug-string-flexmatch@rt.cpan.org>>, or through the web interface at
+L<http://rt.cpan.org>.
+
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
+
+=head1 AVAILABILITY
+
+The latest version of this module is available from the Comprehensive Perl
+Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+=head1 AUTHOR
+
+Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2004-2007 by Marcel GrE<uuml>nauer
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+
+=cut
+
