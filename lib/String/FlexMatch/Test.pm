@@ -1,12 +1,15 @@
-package String::FlexMatch::Test;
-use warnings;
+use 5.008;
 use strict;
+use warnings;
+
+package String::FlexMatch::Test;
+our $VERSION = '1.100820';
+# ABSTRACT: test methods that can handle flexible strings
 use Test::Builder;
 
 # Code that uses this testing package will likely need String::FlexMatch as
 # well, therefore we load it here so the other code won't have to.
 use String::FlexMatch;
-our $VERSION = '0.13';
 use Exporter qw(import);
 our @EXPORT = qw(is_deeply_flex isnt_deeply_flex eq_array_flex eq_hash_flex);
 my $Test = Test::Builder->new;
@@ -175,47 +178,74 @@ sub eq_hash_flex {
     return $ok;
 }
 1;
+
+
 __END__
+=pod
 
 =head1 NAME
 
 String::FlexMatch::Test - test methods that can handle flexible strings
 
-=head1 SYNOPSIS
+=head1 VERSION
 
-    String::FlexMatch::Test->new;
+version 1.100820
 
-=head1 DESCRIPTION
+=head1 METHODS
 
-None yet.
+=head2 cmp_ok
+
+FIXME
+
+=head2 eq_array_flex
+
+FIXME
+
+=head2 eq_hash_flex
+
+FIXME
+
+=head2 is_deeply_flex
+
+FIXME
+
+=head2 is_eq
+
+FIXME
+
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=String-FlexMatch>.
 
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/String-FlexMatch/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you, or see
+L<http://search.cpan.org/dist/String-FlexMatch/>.
 
-=head1 AUTHORS
+The development version lives at
+L<http://github.com/hanekomu/String-FlexMatch/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+=head1 AUTHOR
+
+  Marcel Gruenauer <marcel@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004-2009 by the authors.
+This software is copyright (c) 2004 by Marcel Gruenauer.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

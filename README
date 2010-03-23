@@ -1,6 +1,9 @@
 NAME
     String::FlexMatch - Flexible ways to match a string
 
+VERSION
+    version 1.100820
+
 SYNOPSIS
       use String::FlexMatch;
 
@@ -67,39 +70,83 @@ DESCRIPTION
     with a few cookbook-style examples.
 
 METHODS
-    "new"
-            my $obj = String::FlexMatch->new;
-            my $obj = String::FlexMatch->new(%args);
+  new
+        my $obj = String::FlexMatch->new;
+        my $obj = String::FlexMatch->new(%args);
 
-        Creates and returns a new object. The constructor will accept as
-        arguments a list of pairs, from component name to initial value. For
-        each pair, the named component is initialized by calling the method
-        of the same name with the given value. If called with a single hash
-        reference, it is dereferenced and its key/value pairs are set as
-        described before.
+    Creates and returns a new object. The constructor will accept as
+    arguments a list of pairs, from component name to initial value. For
+    each pair, the named component is initialized by calling the method of
+    the same name with the given value. If called with a single hash
+    reference, it is dereferenced and its key/value pairs are set as
+    described before.
 
-BUGS AND LIMITATIONS
-    No bugs have been reported.
+  as_string
+    FIXME
 
-    Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+  choice_attr
+    FIXME
+
+  code
+    FIXME
+
+  finish_dump
+    FIXME
+
+  force_code
+    FIXME
+
+  force_regex
+    FIXME
+
+  init
+    FIXME
+
+  is_eq
+    FIXME
+
+  is_ne
+    FIXME
+
+  prepare_dump
+    FIXME
+
+  regex
+    FIXME
+
+  string
+    FIXME
+
+  yaml_dump
+    FIXME
 
 INSTALLATION
     See perlmodinstall for information and options on installing Perl
     modules.
 
+BUGS AND LIMITATIONS
+    No bugs have been reported.
+
+    Please report any bugs or feature requests through the web interface at
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=String-FlexMatch>.
+
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
-    CPAN site near you. Or see
+    CPAN site near you, or see
     <http://search.cpan.org/dist/String-FlexMatch/>.
 
-AUTHORS
-    Marcel Grünauer, "<marcel@cpan.org>"
+    The development version lives at
+    <http://github.com/hanekomu/String-FlexMatch/>. Instead of sending
+    patches, please fork this project using the standard git and github
+    infrastructure.
+
+AUTHOR
+      Marcel Gruenauer <marcel@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright 2004-2009 by the authors.
+    This software is copyright (c) 2004 by Marcel Gruenauer.
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 

@@ -1,9 +1,10 @@
-This is the Perl module String::FlexMatch.
+
+This is the Perl distribution String-FlexMatch.
 
 ## Installation
 
-String::FlexMatch installation is straightforward. If your CPAN shell is set
-up, you should just be able to do
+String-FlexMatch installation is straightforward.
+If your CPAN shell is set up, you should just be able to do
 
     % cpan String::FlexMatch
 
@@ -18,10 +19,9 @@ Then install it:
 
 ## Documentation
 
-String::FlexMatch documentation is available as in POD. So you can do:
+String-FlexMatch documentation is available as in POD.
+So you can do:
 
     % perldoc String::FlexMatch
 
-to read the documentation online with your favorite pager.
-
-Marcel Gruenauer
+to read the documentation with your favorite pager.

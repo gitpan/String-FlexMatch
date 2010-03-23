@@ -1,9 +1,11 @@
-package String::FlexMatch;
-use 5.006;
+use 5.008;
 use strict;
 use warnings;
-use base 'Class::Accessor::Complex';
-our $VERSION = '0.13';
+
+package String::FlexMatch;
+our $VERSION = '1.100820';
+# ABSTRACT: Flexible ways to match a string
+use parent 'Class::Accessor::Complex';
 __PACKAGE__->mk_new;
 
 # Back in Test::More 0.45 the sane view was taken that if an object overrides
@@ -118,11 +120,18 @@ sub yaml_dump {
 }
 @String::FlexMatch::NoOverload::ISA = 'String::FlexMatch';
 1;
+
+
 __END__
+=pod
 
 =head1 NAME
 
 String::FlexMatch - Flexible ways to match a string
+
+=head1 VERSION
+
+version 1.100820
 
 =head1 SYNOPSIS
 
@@ -192,9 +201,7 @@ with a few cookbook-style examples.
 
 =head1 METHODS
 
-=over 4
-
-=item C<new>
+=head2 new
 
     my $obj = String::FlexMatch->new;
     my $obj = String::FlexMatch->new(%args);
@@ -205,34 +212,91 @@ component is initialized by calling the method of the same name with the given
 value. If called with a single hash reference, it is dereferenced and its
 key/value pairs are set as described before.
 
-=back
+=head2 as_string
+
+FIXME
+
+=head2 choice_attr
+
+FIXME
+
+=head2 code
+
+FIXME
+
+=head2 finish_dump
+
+FIXME
+
+=head2 force_code
+
+FIXME
+
+=head2 force_regex
+
+FIXME
+
+=head2 init
+
+FIXME
+
+=head2 is_eq
+
+FIXME
+
+=head2 is_ne
+
+FIXME
+
+=head2 prepare_dump
+
+FIXME
+
+=head2 regex
+
+FIXME
+
+=head2 string
+
+FIXME
+
+=head2 yaml_dump
+
+FIXME
+
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=String-FlexMatch>.
 
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/String-FlexMatch/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you, or see
+L<http://search.cpan.org/dist/String-FlexMatch/>.
 
-=head1 AUTHORS
+The development version lives at
+L<http://github.com/hanekomu/String-FlexMatch/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+=head1 AUTHOR
+
+  Marcel Gruenauer <marcel@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004-2009 by the authors.
+This software is copyright (c) 2004 by Marcel Gruenauer.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+
